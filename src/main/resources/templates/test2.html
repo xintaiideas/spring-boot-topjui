@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/mvc">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <title>TopJUI前端框架</title>
+    <!-- 浏览器标签图片 -->
+    <link rel="shortcut icon" href="./topjui/images/favicon.ico"/>
+    <!-- TopJUI框架样式 -->
+    <link type="text/css" href="./topjui/themes/default/topjui.core.min.css" rel="stylesheet"/>
+    <link type="text/css" href="./topjui/themes/default/topjui.blue.css" rel="stylesheet" id="dynamicTheme"/>
+    <!-- FontAwesome字体图标 -->
+    <link type="text/css" href="./static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+<!--按钮-->
+<div id="tb">
+    <a id="openWinBtn" href="#" data-toggle="topjui-linkbutton" data-options="iconCls:'fa fa-plus fa-lg',plain:true">增加</a>
+    <a id="deleteBtn" href="#" data-toggle="topjui-linkbutton" data-options="iconCls:'fa fa-trash-o fa-lg',plain:true">删除</a>
+</div>
+<!--可编辑用户数据表-->
+<table id="tt" style="width:600px;height:200px" title="用户管理" singleselect="true">
+    <thead>
+    <tr>
+        <th field="uId" width="100" checkbox="true">ID</th>
+        <th field="uAccount" width="100" editor="text">账号</th>
+        <th field="uName" width="100" editor="text">姓名</th>
+    </tr>
+    </thead>
+</table>
+<!--添加用户框-->
+<div id="dd" data-toggle="topjui-dialog" title="My Dialog" style="width:400px;height:200px;"
+     data-options="iconCls:'icon-save',
+                   resizable:true,
+                   buttons:'#ddb',
+                   onBeforeDestroy:function(){
+                        alert('是否关闭')
+                   },
+                   modal:true">
+    <form id="ff" style="margin-left:50px">
+        <div>
+            <label>账号:
+            <input data-toggle="topjui-textbox" type="text" name="uAccount" data-options="width:150,required:true"></label>
+        </div>
+        <div>
+            <label>姓名:
+            <input data-toggle="topjui-textbox" type="text" name="uName" data-options="width:150,required:true"></label>
+        </div>
+    </form>
+    <div id="ddb">
+        <a id="insertBtn" href="#" data-toggle="topjui-linkbutton">保存</a>
+        <a id="closeWinBtn" href="#" data-toggle="topjui-linkbutton">关闭</a>
+    </div>
+</div>
+
+</body>
+<!-- jQuery相关引用 -->
+<script type="text/javascript" src="./static/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./static/plugins/jquery/jquery.cookie.js"></script>
+<!-- TopJUI框架配置 -->
+<script type="text/javascript" src="./static/public/js/topjui.config.js"></script>
+<!-- TopJUI框架核心 -->
+<script type="text/javascript" src="./topjui/js/topjui.core.min.js"></script>
+<!-- TopJUI中文支持 -->
+<script type="text/javascript" src="./topjui/js/locale/topjui.lang.zh_CN.js"></script>
+
+<script type="text/javascript" src="./js/test2Js.js"></script>
+</html>
+
